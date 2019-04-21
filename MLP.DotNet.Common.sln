@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Step.Converter.DiscordTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Step.IO.DB.DiscordSereverStructure", "MS.Step.IO.DB.DiscordSereverStructure\MS.Step.IO.DB.DiscordSereverStructure.csproj", "{26507E67-B749-44D5-B319-4D8EBDE2FC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Task.Manager.DiscordTree2PlantUMLTree", "MS.Task.Manager.DiscordTree2PlantUMLTree\MS.Task.Manager.DiscordTree2PlantUMLTree.csproj", "{0FF632A9-40BD-4C4A-8806-8FBD05F66F74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Task.Manager.DiscordTree2PlantUMLTree", "MS.Task.Manager.DiscordTree2PlantUMLTree\MS.Task.Manager.DiscordTree2PlantUMLTree.csproj", "{0FF632A9-40BD-4C4A-8806-8FBD05F66F74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Watcher.DiscordBot", "MS.Watcher.DiscordBot\MS.Watcher.DiscordBot.csproj", "{742FD210-A108-4A1C-BAD6-83186EA11446}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0FF632A9-40BD-4C4A-8806-8FBD05F66F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF632A9-40BD-4C4A-8806-8FBD05F66F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF632A9-40BD-4C4A-8806-8FBD05F66F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742FD210-A108-4A1C-BAD6-83186EA11446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742FD210-A108-4A1C-BAD6-83186EA11446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742FD210-A108-4A1C-BAD6-83186EA11446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742FD210-A108-4A1C-BAD6-83186EA11446}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
