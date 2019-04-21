@@ -1,0 +1,39 @@
+@startuml
+' allow_mixing
+' package Support {
+
+actor App
+
+collections Task1.Manager
+collections Task1.Step1
+collections Task1.Step2
+collections Task1.Step3
+
+activate App
+App -[#red]> Task1.Manager : Task 1
+
+
+activate Task1.Manager
+
+Task1.Manager -> Task1.Step1
+activate Task1.Step1
+Task1.Manager <- Task1.Step1
+deactivate Task1.Step1
+
+
+Task1.Manager -> Task1.Step2
+activate Task1.Step2
+
+Task1.Step2 -> Task1.Step3
+activate Task1.Step3
+Task1.Step2 <- Task1.Step3
+deactivate Task1.Step3
+
+Task1.Manager <- Task1.Step2
+deactivate Task1.Step2
+
+App <[#blue]- Task1.Manager : Result Task 1
+deactivate Task1.Manager
+deactivate App
+
+@enduml

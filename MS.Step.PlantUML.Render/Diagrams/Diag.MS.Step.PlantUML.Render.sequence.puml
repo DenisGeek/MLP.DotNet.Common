@@ -1,0 +1,58 @@
+@startuml
+' allow_mixing
+
+actor ms.Watcher1
+control MQ.External
+
+
+collections ms.Task1.Manager
+collections ms.Task1.Step1
+collections ms.Task1.Step2
+collections ms.Task1.Step3
+
+control MQ.Internal
+
+activate ms.Watcher1
+
+[-> ms.Watcher1: Do Task
+ms.Watcher1 -[#red]> MQ.External : Task 1
+
+
+MQ.External --> ms.Task1.Manager : Task 1
+
+activate ms.Task1.Manager
+
+
+MQ.Internal <-- ms.Task1.Manager   : Step1 do
+    MQ.Internal --> ms.Task1.Step1 : Step1 do
+    activate ms.Task1.Step1
+    MQ.Internal <-- ms.Task1.Step1 : Step1 done
+    deactivate ms.Task1.Step1
+MQ.Internal --> ms.Task1.Manager   : Step1 done
+
+
+
+MQ.Internal <-- ms.Task1.Manager   : Step2 do
+    MQ.Internal --> ms.Task1.Step2 : Step2 do
+    activate ms.Task1.Step2
+
+    MQ.Internal <-- ms.Task1.Step2     : Step3 do
+        MQ.Internal --> ms.Task1.Step3 : Step3 do
+        activate ms.Task1.Step3
+        MQ.Internal <-- ms.Task1.Step3 : Step3 done
+        deactivate ms.Task1.Step3
+        MQ.Internal --> ms.Task1.Step2 : Step3 done
+    MQ.Internal <-- ms.Task1.Step2 : Step2 done
+    deactivate ms.Task1.Step2
+MQ.Internal -->ms.Task1.Manager : Step2 done
+
+
+MQ.External <-- ms.Task1.Manager : Result Task 1
+deactivate ms.Task1.Manager
+
+ms.Watcher1 <[#blue]- MQ.External : Result Task 1
+<- ms.Watcher1 : Done Task
+deactivate ms.Watcher1
+
+
+@enduml

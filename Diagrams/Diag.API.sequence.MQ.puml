@@ -1,0 +1,56 @@
+@startuml
+' allow_mixing
+' package Support {
+
+
+actor ms.Watcher1
+control MQ
+
+collections ms.Task1.Manager
+collections ms.Task1.Step1
+collections ms.Task1.Step2
+collections ms.Task1.Step3
+
+activate ms.Watcher1
+
+[-> ms.Watcher1: Do Task
+ms.Watcher1 -[#red]> MQ : Task 1
+
+
+MQ --> ms.Task1.Manager : Task 1
+
+activate ms.Task1.Manager
+
+
+MQ <-- ms.Task1.Manager   : Step1 do
+    MQ --> ms.Task1.Step1 : Step1 do
+    activate ms.Task1.Step1
+    MQ <-- ms.Task1.Step1 : Step1 done
+    deactivate ms.Task1.Step1
+MQ --> ms.Task1.Manager   : Step1 done
+
+
+
+MQ <-- ms.Task1.Manager   : Step2 do
+    MQ --> ms.Task1.Step2 : Step2 do
+    activate ms.Task1.Step2
+
+    MQ <-- ms.Task1.Step2     : Step3 do
+        MQ --> ms.Task1.Step3 : Step3 do
+        activate ms.Task1.Step3
+        MQ <-- ms.Task1.Step3 : Step3 done
+        deactivate ms.Task1.Step3
+        MQ --> ms.Task1.Step2 : Step3 done
+    MQ <-- ms.Task1.Step2 : Step2 done
+    deactivate ms.Task1.Step2
+MQ -->ms.Task1.Manager : Step2 done
+
+
+MQ <-- ms.Task1.Manager : Result Task 1
+deactivate ms.Task1.Manager
+
+ms.Watcher1 <[#blue]- MQ : Result Task 1
+<- ms.Watcher1 : Done Task
+deactivate ms.Watcher1
+
+@enduml
