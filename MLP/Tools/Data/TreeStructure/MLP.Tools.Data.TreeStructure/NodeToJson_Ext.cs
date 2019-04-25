@@ -7,7 +7,7 @@ namespace MLP.Tools
 {
     public static class NodeToJson_Ext
     {
-        public static string ToJson(this Node the)
+        public static string ToJson<T>(this Node<T> the)
           => JsonConvert.SerializeObject(the, Formatting.Indented);
     }
 }

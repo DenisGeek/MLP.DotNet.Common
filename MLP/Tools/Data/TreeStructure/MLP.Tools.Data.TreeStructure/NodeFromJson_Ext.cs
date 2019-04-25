@@ -7,7 +7,7 @@ namespace MLP.Tools
 {
     public static class NodeFromJson_Ext
     {
-        public static Node Json2Node(this string the)
-            => (Node)JsonConvert.DeserializeObject(the);
+        public static Node<T> Json2Node<T>(this string the)
+            => (Node<T>)JsonConvert.DeserializeObject(the);
     }
 }
