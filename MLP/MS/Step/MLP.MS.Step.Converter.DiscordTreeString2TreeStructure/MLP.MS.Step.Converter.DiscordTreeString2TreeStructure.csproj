@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>MLP.MS.Step.Converter</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\MLP.Tools.Data.TreeStructure.csproj" />
+  </ItemGroup>
+
+</Project>
