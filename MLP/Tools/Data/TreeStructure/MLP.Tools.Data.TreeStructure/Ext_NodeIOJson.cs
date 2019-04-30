@@ -11,6 +11,9 @@ namespace MLP.Tools
             => (Node<T>)JsonConvert.DeserializeObject(the);
 
         public static string ToJson<T>(this Node<T> the)
-            => JsonConvert.SerializeObject(the, Formatting.Indented);
+            => JsonConvert.SerializeObject(the, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
     }
 }
