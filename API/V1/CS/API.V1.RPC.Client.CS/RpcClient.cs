@@ -12,12 +12,12 @@ namespace API.V1.RPC.Client
     //
     // Example:
     // var jsonMessage = Newtonsoft.Json.JsonConvert.SerializeObject(obj);// http://www.newtonsoft.com/json/help/html/SerializingJSON.htm
-    // using (aReguest = new RpcClient())
+    // using (var aReguest = new RpcClient())
     // {
     //   var aResJson = aReguest.Call(jsonMessage);
     //   // do something with aResJson
     //   ..
-    // )
+    // }
     public class RpcClient:IDisposable
     {
         private readonly IConnection _connection;

@@ -1,13 +1,15 @@
-﻿using Discord;
+﻿using API.V1.RPC.Client;
+using Discord;
 using Discord.WebSocket;
+using MLP.Tools;
 using System;
 using System.Threading.Tasks;
 
 namespace MS.E.DiscordBot
 {
-    class Program
+    class mainDiscordBot
     {
-        static void Main(string[] args) => new Program().MainAsync().GetAwaiter().GetResult();
+        static void Main(string[] args) => new mainDiscordBot().MainAsync().GetAwaiter().GetResult();
 
         private DiscordSocketClient _client;
 
@@ -45,9 +47,18 @@ namespace MS.E.DiscordBot
                     Environment.Exit(1);
                     break;
                 case "RabbitMQ":
-                    var tree = new 
-                    await message.Channel.SendMessageAsync("Have a nice day :no_mouth:");
-                    Environment.Exit(1);
+                    var tree = new Node<string>();
+                    tree.Data = "root";
+                    tree.AddChild("branch_1");
+                    tree.Children[0].AddChild("branch_1.1");
+                    tree.AddChild("branch_2");
+                    var jsonMessage = Newtonsoft.Json.JsonConvert.SerializeObject(tree);
+                    using (var aReguest = new RpcClient())
+                    {
+                        var aResJson = aReguest.Call(jsonMessage);
+                        // do something with aResJson
+                        await message.Channel.SendMessageAsync(aResJson);
+                    }
                     break;
             }
         }
