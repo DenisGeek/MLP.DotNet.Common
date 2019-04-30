@@ -15,6 +15,16 @@ namespace MS.E.DiscordBot
 
         public async Task MainAsync()
         {
+            var tree = new Node<string>();
+            tree.Data = "root";
+            tree.AddChild("branch_1");
+            tree.Children[0].AddChild("branch_1.1");
+            tree.AddChild("branch_2");
+
+            // JSON Tree serializse test
+            //var jsonMessage = tree.ToJson();
+            //var tr = jsonMessage.Json2NodeTEST<string>();
+
             _client = new DiscordSocketClient();
 
             _client.Log += Log;
@@ -52,7 +62,9 @@ namespace MS.E.DiscordBot
                     tree.AddChild("branch_1");
                     tree.Children[0].AddChild("branch_1.1");
                     tree.AddChild("branch_2");
+
                     var jsonMessage = tree.ToJson();
+
                     using (var aReguest = new RpcClient())
                     {
                         var aResJson = aReguest.Call(jsonMessage);
