@@ -20,7 +20,6 @@ namespace API.V1.RPC.Server
         private readonly IConnection _connection;
         private readonly IModel _channel;
         private readonly EventingBasicConsumer _consumer;
-        private readonly IBasicProperties _props;
 
         /// <summary>
         /// Received Handler
