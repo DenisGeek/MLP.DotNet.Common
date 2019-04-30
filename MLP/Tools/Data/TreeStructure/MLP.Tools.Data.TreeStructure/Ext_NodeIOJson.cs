@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MLP.Tools
 {
-    public static class NodeIOJson_Ext
+    public static class Ext_NodeIOJson
     {
         public static Node<T> Json2Node<T>(this string the)
             => (Node<T>)JsonConvert.DeserializeObject(the);

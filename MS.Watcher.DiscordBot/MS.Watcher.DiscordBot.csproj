@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,6 +7,11 @@
 
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API\V1\CS\API.V1.RPC.Client.CS\API.V1.RPC.Client.CS.csproj" />
+    <ProjectReference Include="..\MLP\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\MLP.Tools.Data.TreeStructure.csproj" />
   </ItemGroup>
 
 </Project>

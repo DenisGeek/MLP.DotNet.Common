@@ -44,6 +44,11 @@ namespace MS.E.DiscordBot
                     await message.Channel.SendMessageAsync("Have a nice day :no_mouth:");
                     Environment.Exit(1);
                     break;
+                case "RabbitMQ":
+                    var tree = new 
+                    await message.Channel.SendMessageAsync("Have a nice day :no_mouth:");
+                    Environment.Exit(1);
+                    break;
             }
         }
 
