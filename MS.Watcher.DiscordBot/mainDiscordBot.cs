@@ -21,10 +21,6 @@ namespace MS.E.DiscordBot
             tree.Children[0].AddChild("branch_1.1");
             tree.AddChild("branch_2");
 
-            // JSON Tree serializse test
-            //var jsonMessage = tree.ToJson();
-            //var tr = jsonMessage.Json2NodeTEST<string>();
-
             _client = new DiscordSocketClient();
 
             _client.Log += Log;

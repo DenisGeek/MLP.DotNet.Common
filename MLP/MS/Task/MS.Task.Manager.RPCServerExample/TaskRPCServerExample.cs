@@ -24,9 +24,9 @@ namespace MS.Task.Manager.RPCServerExample
 
         private static string MessageHandler(string aMessage)
         {
-            var tree = new Node<string>();
-            //var tree = aMessage.Json2Node<string>();
-            tree.AddChild("Branch From MS.Task.Manager.RPCServerExample");
+            var tree = aMessage.Json2Node<string>();
+            tree.AddChild(" :metal: Branch From MS.Task.Manager.RPCServerExample");
+
             Console.WriteLine(" [x] Branch has been added");
 
             return tree.ToJson();
