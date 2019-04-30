@@ -52,7 +52,7 @@ namespace MS.E.DiscordBot
                     tree.AddChild("branch_1");
                     tree.Children[0].AddChild("branch_1.1");
                     tree.AddChild("branch_2");
-                    var jsonMessage = Newtonsoft.Json.JsonConvert.SerializeObject(tree);
+                    var jsonMessage = tree.ToJson();
                     using (var aReguest = new RpcClient())
                     {
                         var aResJson = aReguest.Call(jsonMessage);
