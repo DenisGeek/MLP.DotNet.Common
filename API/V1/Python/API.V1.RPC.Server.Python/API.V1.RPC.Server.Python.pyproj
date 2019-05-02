@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API.V1.RPC.Server.Python.py" />
+    <Compile Include="RpcServer.py" />
     <Compile Include="Server.RPC.Test.py" />
   </ItemGroup>
   <ItemGroup>

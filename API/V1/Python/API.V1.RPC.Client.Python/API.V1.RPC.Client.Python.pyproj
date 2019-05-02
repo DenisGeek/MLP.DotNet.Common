@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>92d91cb2-ef6d-4447-9b23-01ca425c909d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Client.RPC.Test.py</StartupFile>
+    <StartupFile>RpcClient.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API.V1.RPC.Client.Python.py" />
+    <Compile Include="RpcClient.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Client.RPC.Test.py">
