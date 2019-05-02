@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>044ea1bb-d8c8-413a-8063-9a3c2a1437e1</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Server.RPC.Test.py</StartupFile>
+    <StartupFile>RpcServer.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
