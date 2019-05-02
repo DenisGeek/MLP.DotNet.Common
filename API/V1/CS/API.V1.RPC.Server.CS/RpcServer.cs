@@ -35,7 +35,12 @@ namespace API.V1.RPC
         private readonly string _user;
         private readonly string _pass;
 
-        public RpcServer(string aHostName = "localhost", string aVirtualHost="/", string aQueueName = "rpc_queue", string aUser="guest", string aPass= "guest")
+        public RpcServer(
+            string aHostName = "localhost", 
+            string aVirtualHost="/", 
+            string aQueueName = "rpc_queue", 
+            string aUser="guest", 
+            string aPass= "guest")
         {
             _hostName = aHostName;
             _virtualHost = aVirtualHost;
@@ -62,7 +67,7 @@ namespace API.V1.RPC
         private (IConnection connection, IModel channel)
             CreateChannel(string aHostName, string aVirtualHost,string aQueueName, string aUser, string aPass)
         {
-            var factory = new ConnectionFactory() { HostName = aHostName };
+            var factory = new ConnectionFactory();
             factory.UserName = aUser;
             factory.Password = aPass;
             factory.VirtualHost = aVirtualHost;
