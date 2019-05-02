@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API.V1.RPC.Server.CS\API.V1.RPC.Server.CS.csproj" />
+  </ItemGroup>
+
 </Project>
