@@ -32,7 +32,7 @@ class RpcServer:
             pika.ConnectionParameters(host = aHostName))
         channel = connection.channel()
         channel.queue_declare(queue = aQueueName)
-        return (connection, channel);
+        return (connection, channel)
 
     def on_request(self, ch, method, props, body):
         message = str(body.decode("utf-8"))

@@ -22,7 +22,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="RpcServer.py" />
-    <Compile Include="Server.RPC.Test.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Wiki.API.V1.RPC.Server.md" />

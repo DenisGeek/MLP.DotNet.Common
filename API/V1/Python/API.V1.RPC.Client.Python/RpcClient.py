@@ -30,7 +30,7 @@ class RpcClient:
         connection = pika.BlockingConnection(
             pika.ConnectionParameters(host = aHostName))
         channel = connection.channel()
-        return (connection, channel);
+        return (connection, channel)
 
     def on_response(self, ch, method, props, body):
         if self._corr_id == props.correlation_id:
