@@ -29,18 +29,33 @@ namespace API.V1.RPC
 
 
         private readonly string _hostName;
+        private readonly string _virtualHost;
+        private readonly int _port;
         private readonly string _queueName;
+        private readonly string _user;
+        private readonly string _pass;
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="aHostName">the host name</param>
         /// <param name="aQueueName">the queue name</param>
-        public RpcClient(string aHostName = "localhost", string aQueueName = "rpc_queue")
+        public RpcClient(
+            string aHostName = "localhost",
+            string aVirtualHost = "/",
+            int aPort = 5672,
+            string aQueueName = "rpc_queue",
+            string aUser = "guest",
+            string aPass = "guest")
         {
             _hostName = aHostName;
+            _virtualHost = aVirtualHost;
+            _port = aPort;
             _queueName = aQueueName;
+            _user = aUser;
+            _pass = aPass;
 
-            var channelInstanceRes = CreateChannel(_hostName);
+            var channelInstanceRes = CreateChannel(_hostName, _virtualHost, _port, _queueName, _user, _pass);
             _connection = channelInstanceRes.connection;
             _channel = channelInstanceRes.channel;
             _replyQueueName = channelInstanceRes.replyQueueName;
@@ -58,9 +73,14 @@ namespace API.V1.RPC
         }
 
         private (IConnection connection, IModel channel, string replyQueueName) 
-            CreateChannel(string aHostName)
+            CreateChannel(string aHostName, string aVirtualHost, int aPort, string aQueueName, string aUser, string aPass)
         {
-            var factory = new ConnectionFactory() { HostName = aHostName };
+            var factory = new ConnectionFactory();
+            factory.UserName = aUser;
+            factory.Password = aPass;
+            factory.VirtualHost = aVirtualHost;
+            factory.HostName = aHostName;
+            factory.Port = aPort;
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var replyQueueName = channel.QueueDeclare().QueueName;

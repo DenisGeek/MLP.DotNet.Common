@@ -12,7 +12,7 @@ namespace MS.E.DiscordBot
         static void Main(string[] args) => new mainDiscordBot().MainAsync().GetAwaiter().GetResult();
 
         private DiscordSocketClient _client;
-
+        
         public async Task MainAsync()
         {
             var tree = new Node<string>();
