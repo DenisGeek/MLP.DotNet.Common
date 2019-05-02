@@ -58,9 +58,9 @@ class RpcClient:
             body = message)
         while self._response is None:
             self._connection.process_data_events()
-        return str(self._response)
+        return self._response.decode("utf-8")
 
-rpcClient = RpcClient()
-print(" [x] Requesting fib(30)")
-response = rpcClient.call("2")
-print(" [.] Got %r" % response)
+#rpcClient = RpcClient()
+#print(" [x] Requesting fib(30)")
+#response = rpcClient.call("2")
+#print(" [.] Got %r" % response)

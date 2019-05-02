@@ -24,9 +24,6 @@
     <Compile Include="RpcClient.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Client.RPC.Test.py">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="Wiki.API.V1.RPC.Client.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
