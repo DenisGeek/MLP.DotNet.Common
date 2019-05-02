@@ -2,15 +2,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>044ea1bb-d8c8-413a-8063-9a3c2a1437e1</ProjectGuid>
+    <ProjectGuid>cad97337-3c1c-4744-8e1f-a0007c4bb140</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>RpcServer.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>API.V1.RPC.Server.Python.Example.py</StartupFile>
+    <SearchPath>..\API.V1.RPC.Server.Python</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>API.V1.RPC.Server.Python</Name>
-    <RootNamespace>API.V1.RPC.Server.Python</RootNamespace>
+    <Name>API.V1.RPC.Server.Python.Example</Name>
+    <RootNamespace>API.V1.RPC.Server.Python.Example</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,11 +20,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="RpcServer.py" />
-    <Compile Include="Server.RPC.Test.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Wiki.API.V1.RPC.Server.md" />
+    <Compile Include="API.V1.RPC.Server.Python.Example.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

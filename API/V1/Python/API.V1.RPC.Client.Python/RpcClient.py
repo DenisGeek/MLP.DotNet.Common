@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import pika
 import uuid
-#from collections import namedtuple
 
 class RpcClient:
     _connection: pika.BlockingConnection
@@ -59,8 +58,3 @@ class RpcClient:
         while self._response is None:
             self._connection.process_data_events()
         return str(self._response.decode("utf-8"))
-
-#rpcClient = RpcClient()
-#print(" [x] Requesting fib(30)")
-#response = rpcClient.call("2")
-#print(" [.] Got %r" % response)
