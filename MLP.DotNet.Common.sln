@@ -55,6 +55,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Environment.RabbitMQ"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.EnvironmentExt", "Tools\Environment\Tools.EnvironmentExt\Tools.EnvironmentExt.csproj", "{1C4DF6DF-A548-4FB8-97B5-6379A515DF75}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discord", "Discord", "{64A7F046-44D4-44D8-B9AC-DB8DB24093A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Environment.Discord", "Tools\Environment\Discord\Tools.Environment.Discord\Tools.Environment.Discord.csproj", "{391A1105-54E8-4165-8E3E-45ECFF1A7295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,10 @@ Global
 		{1C4DF6DF-A548-4FB8-97B5-6379A515DF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C4DF6DF-A548-4FB8-97B5-6379A515DF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C4DF6DF-A548-4FB8-97B5-6379A515DF75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391A1105-54E8-4165-8E3E-45ECFF1A7295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391A1105-54E8-4165-8E3E-45ECFF1A7295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391A1105-54E8-4165-8E3E-45ECFF1A7295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391A1105-54E8-4165-8E3E-45ECFF1A7295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,6 +141,8 @@ Global
 		{BA54D8C0-C855-4E12-A726-D1E12CE5C4E0} = {9C4DE37D-4A0D-45BC-9CEC-67CBE2B2641A}
 		{ADCA615F-9716-4DF9-839C-C064D58406CF} = {BA54D8C0-C855-4E12-A726-D1E12CE5C4E0}
 		{1C4DF6DF-A548-4FB8-97B5-6379A515DF75} = {9C4DE37D-4A0D-45BC-9CEC-67CBE2B2641A}
+		{64A7F046-44D4-44D8-B9AC-DB8DB24093A2} = {9C4DE37D-4A0D-45BC-9CEC-67CBE2B2641A}
+		{391A1105-54E8-4165-8E3E-45ECFF1A7295} = {64A7F046-44D4-44D8-B9AC-DB8DB24093A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3B8D0F4-D5C5-46BA-AA22-23177E43428E}

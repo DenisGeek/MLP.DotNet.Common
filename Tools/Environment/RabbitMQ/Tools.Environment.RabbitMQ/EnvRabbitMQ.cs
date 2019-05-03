@@ -2,7 +2,7 @@
 
 namespace Tools.Environment
 {
-    public static class EnvRabbitMQ
+    public class EnvRabbitMQ
     {
         public static readonly string User;
         public static readonly string Pass;
