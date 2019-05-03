@@ -37,7 +37,7 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "API.V1.RPC.Client.Python.Ex
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "API.V1.RPC.Server.Python.Example", "API\V1\Python\API.V1.RPC.Server.Python.Example\API.V1.RPC.Server.Python.Example.pyproj", "{CAD97337-3C1C-4744-8E1F-A0007C4BB140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.V1.RPC.Client.CS.Example", "API\V1\CS\API.V1.RPC.Client.CS.Example\API.V1.RPC.Client.CS.Example.csproj", "{ABAD5831-54EC-4363-BE95-CFEB260D1F8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.V1.RPC.Client.CS.Example", "API\V1\CS\API.V1.RPC.Client.CS.Example\API.V1.RPC.Client.CS.Example.csproj", "{ABAD5831-54EC-4363-BE95-CFEB260D1F8E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.V1.RPC.Server.CS.Example", "API\V1\CS\API.V1.RPC.Server.CS.Example\API.V1.RPC.Server.CS.Example.csproj", "{6F02C71B-9242-4462-9D60-DF2FC95C7B46}"
 EndProject

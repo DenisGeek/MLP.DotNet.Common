@@ -9,14 +9,34 @@ class RpcServer:
 
     _hostName: str
     _queueName: str 
-    #_handlerReceivedJson
+    _port: int
+    _queueName: str
+    _user: str
+    _pass: str
+    #__handlerReceivedJson
 
-    def __init__(self, aHostName: str = "localhost", aQueueName: str = "rpc_queue"):
+    def __init__(self, 
+                aHostName: str = "localhost",
+                aVirtualHost: str = "/",
+                aPort: int = 5672,
+                aQueueName: str = "rpc_queue",
+                aUser: str = "guest",
+                aPass: str = "guest"):
         # Constructor
-        self._hostName = aHostName
-        self._queueName = aQueueName
+        self._hostName = aHostName;
+        self._virtualHost = aVirtualHost;
+        self._port = aPort;
+        self._queueName = aQueueName;
+        self._user = aUser;
+        self._pass = aPass;
 
-        self._connection, self._channel = self.CreateChannel(self._hostName, self._queueName)
+        self._connection, self._channel = self.CreateChannel(
+            self._hostName, 
+            self._virtualHost,
+            self._port,
+            self._queueName,
+            self._user,
+            self._pass)
 
     def __enter__(self):
         # Prepare `with` context
@@ -27,9 +47,24 @@ class RpcServer:
         if self._connection.is_open:
             self._connection.close()
 
-    def CreateChannel(self, aHostName: str, aQueueName: str) -> (pika.BlockingConnection, pika.channel.Channel):
+    def CreateChannel(self, 
+                aHostName: str,
+                aVirtualHost: str,
+                aPort: int,
+                aQueueName: str,
+                aUser: str,
+                aPass: str
+                      ) -> (pika.BlockingConnection, pika.channel.Channel):
+        #https://pika.readthedocs.io/en/latest/modules/parameters.html
+        usrCredentials = pika.PlainCredentials(aUser, aPass)
         connection = pika.BlockingConnection(
-            pika.ConnectionParameters(host = aHostName))
+            pika.ConnectionParameters(
+                credentials = usrCredentials,
+                virtual_host = aVirtualHost,
+                host = aHostName,
+                port = aPort,
+                )
+            )
         channel = connection.channel()
         channel.queue_declare(queue = aQueueName)
         return (connection, channel)
