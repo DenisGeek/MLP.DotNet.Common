@@ -1,9 +1,16 @@
 #!/usr/bin/env python
 from RpcClient import RpcClient
 import asyncio
+import os #https://stackoverflow.com/questions/4906977/how-to-access-environment-variable-values
+
+def getEnvUserPass(userDef="guest", passDef="guest",)->(str,str):
+    theUser = os.getenv('RabbitMQ_User', userDef)
+    thePass = os.getenv('RabbitMQ_Pass', passDef)
+    return (theUser, thePass)
 
 async def asyncRpcClient():
-    with RpcClient() as rpcClient:
+    theUser, thePass = getEnvUserPass()
+    with RpcClient(aUser=theUser, aPass=thePass) as rpcClient:
         message = '2'
         print(f" [x] Requesting {message})")
         response = rpcClient.call(message)
