@@ -72,15 +72,17 @@ namespace API.V1.RPC
             _connection.Close();
         }
 
-        private (IConnection connection, IModel channel, string replyQueueName) 
+        private (IConnection connection, IModel channel, string replyQueueName)
             CreateChannel(string aHostName, string aVirtualHost, int aPort, string aQueueName, string aUser, string aPass)
         {
-            var factory = new ConnectionFactory();
-            factory.UserName = aUser;
-            factory.Password = aPass;
-            factory.VirtualHost = aVirtualHost;
-            factory.HostName = aHostName;
-            factory.Port = aPort;
+            var factory = new ConnectionFactory()
+            { 
+                UserName = aUser,
+                Password = aPass,
+                VirtualHost = aVirtualHost,
+                HostName = aHostName,
+                Port = aPort,
+            };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var replyQueueName = channel.QueueDeclare().QueueName;
