@@ -7,6 +7,9 @@ namespace API.V1.RPC.Server.CS.Test
         private static RpcServer _server;
         private static string _rmqUser;
         private static string _rmqPass;
+        private static string _rmqHostName;
+        private static int _rmqPort;
+        private static string _rmqQueueName = "RemoteTest";
 
         static void Main(string[] args)
         {
@@ -20,10 +23,19 @@ namespace API.V1.RPC.Server.CS.Test
         {
             _rmqUser = Environment.GetEnvironmentVariable("RabbitMQ_User");
             _rmqPass = Environment.GetEnvironmentVariable("RabbitMQ_Pass");
+            _rmqHostName = Environment.GetEnvironmentVariable("RabbitMQ_Host");
+            _rmqPort = int.Parse(Environment.GetEnvironmentVariable("RabbitMQ_Port"));
         }
         private static void InitServer()
         {
-            _server = new RpcServer(/*QueueName: "TaskDiscordTree"*/, aUser: _rmqUser,aPass:_rmqPass);
+            _server = new RpcServer(
+                                        aHostName: _rmqHostName,
+                                        //aVirtualHost: EnvRabbitMQTaskDiscordTree.VirtualHost,
+                                        aPort: _rmqPort,
+                                        aQueueName: _rmqQueueName,
+                                        aUser: _rmqUser,
+                                        aPass: _rmqPass
+                                    );
             _server.HandlerReceivedJson = MessageHandler;
             Console.WriteLine(" [x] Awaiting RPC requests");
         }
