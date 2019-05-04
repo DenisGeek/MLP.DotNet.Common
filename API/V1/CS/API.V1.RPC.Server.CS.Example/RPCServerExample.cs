@@ -23,7 +23,7 @@ namespace API.V1.RPC.Server.CS.Test
         }
         private static void InitServer()
         {
-            _server = new RpcServer(aUser:_rmqUser,aPass:_rmqPass);
+            _server = new RpcServer(/*QueueName: "TaskDiscordTree"*/, aUser: _rmqUser,aPass:_rmqPass);
             _server.HandlerReceivedJson = MessageHandler;
             Console.WriteLine(" [x] Awaiting RPC requests");
         }

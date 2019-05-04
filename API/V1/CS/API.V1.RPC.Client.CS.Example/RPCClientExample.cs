@@ -13,7 +13,7 @@ namespace API.V1.RPC.Client.CS.Example
             GetConnectionParams();
             Console.WriteLine("Hello World!");
             var message = "1";
-            using (var aReguest = new RpcClient(aUser: _rmqUser, aPass: _rmqPass))
+            using (var aReguest = new RpcClient(aQueueName:"asd", aUser: _rmqUser, aPass: _rmqPass))
             {
                 Console.WriteLine($" [x] Requesting {message})");
                 var response = aReguest.Call(message);

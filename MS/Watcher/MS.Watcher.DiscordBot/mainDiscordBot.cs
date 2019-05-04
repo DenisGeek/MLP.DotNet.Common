@@ -29,7 +29,7 @@ namespace MS.Watcher.DiscordBot
             await _client.LoginAsync(TokenType.Bot, EnvDiscord.Token);
             await _client.StartAsync();
             _client.MessageReceived += MessageReceived;
-            new DiscordBotStructureChannels().Start(_client);
+            //await new DiscordBotStructureChannels(_client).Start();
 
             // Block this task until the program is closed.
             await Task.Delay(-1);
@@ -64,6 +64,9 @@ namespace MS.Watcher.DiscordBot
                         // do something with aResJson
                         await message.Channel.SendMessageAsync(aResJson);
                     }
+                    break;
+                case "!SCAN":
+                        await new DiscordBotStructureChannels(_client, message).Start();
                     break;
             }
         }
