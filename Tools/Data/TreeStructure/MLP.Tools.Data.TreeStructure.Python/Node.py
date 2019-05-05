@@ -1,31 +1,36 @@
 #!/usr/bin/env python
-from typing import Generic
-import typing
+import json
 
-T = typing.TypeVar('T')
-
-class Node(Generic[T]):
-    #https://softwareengineering.stackexchange.com/questions/254576/is-it-a-good-practice-to-declare-instance-variables-as-none-in-a-class-in-python
-    #don't do it!!! this like static in CS (class level in Python)
-    #Data: T
-    #Parent: Node[T]
-    #Children: list[Node[T]]# = list[Node[T]]()
-
+class Node():pass
+class Node():
     def __init__(self, 
-                 aData:T =None, 
-                 aParent:Node[T] =None
-                 ):
-        #class fields self-declarated in class methods, in all class methods !!!
-        self.Data: T = aData
-        self.Parent: Node[T] = aParent
-        self.Children = list[Node[T]]()
+                 aData=None):
+        self.Data = aData
+        self.Children = list()
 
+    def AddChild(self, aData) -> Node:
+        self.Children.append(Node(aData))
+        return self.Children[-1]
 
-    def AddChild(aData:T) -> None:
-        Children.append(Node[T](aData, self))
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, sort_keys=False, indent=4)
 
-tree = Node[str]("")
-tree.Data = "root";
-tree.AddChild("branch_1")
-tree.Children[0].AddChild("branch_1.1");
-tree.AddChild("branch_2");
+#example
+if __name__ == '__main__':
+    class DiscordNode:
+        def __init__(self, 
+                    aNodePName:str =None, 
+                    aNodePKind:str =None,
+                    aNodePDescr:str =None):
+            self.NodePName = aNodePName
+            self.NodePKind = aNodePKind
+            self.NodePDescr = aNodePDescr
+
+    tree = Node()
+    tree.Data = DiscordNode("MLP Discord","root")
+    child = tree.AddChild(DiscordNode("cat 1","category"))
+    child.AddChild(DiscordNode("chan 1","category"))
+    tree.AddChild(DiscordNode("cat 2","category"))
+
+    j = tree.toJSON()
+    print(j)
