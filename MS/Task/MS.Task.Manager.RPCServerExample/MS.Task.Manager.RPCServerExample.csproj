@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\API\V1\CS\API.V1.RPC.Server.CS\API.V1.RPC.Server.CS.csproj" />
-    <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\MLP.Tools.Data.TreeStructure.csproj" />
+    <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\Tools.Data.TreeStructure.csproj" />
   </ItemGroup>
 
 </Project>

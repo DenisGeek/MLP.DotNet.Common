@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2f0d852f-3fd9-4e25-ae20-05ad92534640</ProjectGuid>
+    <ProjectGuid>c6bb5ccf-e600-45c9-8403-06ad8db0be75</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Node.py</StartupFile>
+    <StartupFile>Tools.Data.Python.Pickle.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>MLP.Tools.Data.TreeStructure.Python</Name>
-    <RootNamespace>MLP.Tools.Data.TreeStructure.Python</RootNamespace>
+    <Name>Tools.Data.Python.Pickle</Name>
+    <RootNamespace>Tools.Data.Python.Pickle</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Node.py" />
+    <Compile Include="Tools.Data.Python.Pickle.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
