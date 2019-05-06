@@ -26,9 +26,26 @@ namespace MS.Watcher.DiscordBot.StructureChannels
             _client = aClient;
             _userMessage = aMessage;
         }
-
+        public IEnumerable<SocketGuildChannel> getAllChannelsIter(DiscordSocketClient client)
+        {
+            foreach (var guild in client.Guilds)
+                foreach (var channel in guild.Channels)
+                    yield return channel;
+        }
+        public IEnumerable<SocketGuildChannel> getAllChannelsList(DiscordSocketClient client)
+        {
+            var res = new List<SocketGuildChannel>();
+            foreach (var guild in client.Guilds)
+                foreach (var channel in guild.Channels)
+                    res.Add(channel);
+            return res;
+        }
         public async Task Start()
         {
+            foreach (var guid in _client.Guilds)
+            {
+
+            }
             _botMessage = await _userMessage.Channel.SendMessageAsync("MLP.net.BotTest started");
 
             var i = 0;
@@ -42,16 +59,23 @@ namespace MS.Watcher.DiscordBot.StructureChannels
             }
         }
 
+        class DiscordNode
+        {
+            public string NodePName;
+            public string NodePKind;
+            public string NodePDescr;
+        }
         public async Task<string> Scan(int i)
         {
             await Task.Delay(100);
             Console.WriteLine($"Scan {i++}");
 
-            var tree = new Node<string>();
-            tree.Data = "root";
-            tree.AddChild("branch_1");
-            tree.Children[0].AddChild("branch_1.1");
-            tree.AddChild("branch_2");
+            var tree = new Node<DiscordNode>();
+            tree.Data = new DiscordNode() { NodePName = "MLP Discord", NodePKind = "root" };
+            tree.AddChild(new DiscordNode() { NodePName = "cat 1", NodePKind = "category" });
+            tree.Children[0].AddChild(new DiscordNode() { NodePName = "chan 1", NodePKind = "chanhel" });
+            tree.AddChild(new DiscordNode() { NodePName = "cat 2", NodePKind = "category" });
+            tree.AddChild(new DiscordNode() { NodePName = "chan in root", NodePKind = "chanhel" });
             var jsonMessage = tree.ToJson();
 
             return jsonMessage;
@@ -61,8 +85,8 @@ namespace MS.Watcher.DiscordBot.StructureChannels
         {
             var response = "";
             using (var aReguest = new RpcClient(
-                                        //aHostName: EnvRabbitMQ.Host,
-                                        //aVirtualHost: EnvRabbitMQTaskDiscordTree.VirtualHost,
+                                        aHostName: EnvRabbitMQ.Host,
+                                        aVirtualHost: EnvRabbitMQTaskDiscordTree.VirtualHost,
                                         aPort: EnvRabbitMQ.Port,
                                         aQueueName: EnvRabbitMQTaskDiscordTree.QueueName,
                                         aUser: EnvRabbitMQ.User,

@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\API\V1\CS\API.V1.RPC.Client.CS\API.V1.RPC.Client.CS.csproj" />
-    <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\MLP.Tools.Data.TreeStructure.csproj" />
+    <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\Tools.Data.TreeStructure.csproj" />
     <ProjectReference Include="..\..\..\Tools\Environment\Discord\Tools.Environment.Discord\Tools.Environment.Discord.csproj" />
     <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools.Environment.RabbitMQ\Tools.Environment.RabbitMQ.csproj" />
   </ItemGroup>
