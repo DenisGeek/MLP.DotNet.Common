@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A0182FAB-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TreeStructure", "TreeStructure", "{00EDD4E3-4DB9-4F56-9538-D2108F54966A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLP.Tools.Data.TreeStructure", "Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\MLP.Tools.Data.TreeStructure.csproj", "{8DF7DC90-62A1-4C5A-9326-BE2058C22750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Data.TreeStructure", "Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\Tools.Data.TreeStructure.csproj", "{8DF7DC90-62A1-4C5A-9326-BE2058C22750}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "API.V1.RPC.Client.Python", "API\V1\Python\API.V1.RPC.Client.Python\API.V1.RPC.Client.Python.pyproj", "{92D91CB2-EF6D-4447-9B23-01CA425C909D}"
 EndProject
@@ -59,7 +59,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discord", "Discord", "{64A7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Environment.Discord", "Tools\Environment\Discord\Tools.Environment.Discord\Tools.Environment.Discord.csproj", "{391A1105-54E8-4165-8E3E-45ECFF1A7295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Task.DiscordBot.Tree", "MS\Task\MS.Task.DiscordBot.Tree\MS.Task.DiscordBot.Tree.csproj", "{CB631186-E989-4F48-8FA8-366548124785}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Task.DiscordBot.Tree", "MS\Task\MS.Task.DiscordBot.Tree\MS.Task.DiscordBot.Tree.csproj", "{CB631186-E989-4F48-8FA8-366548124785}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Step.Convert.DiscordTree2PlantUml", "MS\Step\MS.Step.Convert.DiscordTree2PlantUml\MS.Step.Convert.DiscordTree2PlantUml.csproj", "{292AA7B1-CF73-4E6E-A76D-587D12944AA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Step.Render.PlantUml", "MS\Step\MS.Step.Render.PlantUML\MS.Step.Render.PlantUml.csproj", "{AAC8D701-CCF3-4B91-BBCC-1FF6D9721563}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Tools.Data.TreeStructure.Python", "Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure.Python\Tools.Data.TreeStructure.Python.pyproj", "{2F0D852F-3FD9-4E25-AE20-05AD92534640}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "API.V1.RPC.Client.Python.Tree.Example", "API\V1\Python\API.V1.RPC.Client.Python.Tree.Example\API.V1.RPC.Client.Python.Tree.Example.pyproj", "{7404112E-0425-4BF2-86B0-E2A5DB903425}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python", "Python", "{C6215E2D-249F-4BCB-AB5E-4DB454D29D36}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Tools.Data.Python.Pickle", "Tools\Data\Python\Tools.Data.Python.Pickle\Tools.Data.Python.Pickle.pyproj", "{C6BB5CCF-E600-45C9-8403-06AD8DB0BE75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +131,20 @@ Global
 		{CB631186-E989-4F48-8FA8-366548124785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB631186-E989-4F48-8FA8-366548124785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB631186-E989-4F48-8FA8-366548124785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292AA7B1-CF73-4E6E-A76D-587D12944AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292AA7B1-CF73-4E6E-A76D-587D12944AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292AA7B1-CF73-4E6E-A76D-587D12944AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292AA7B1-CF73-4E6E-A76D-587D12944AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC8D701-CCF3-4B91-BBCC-1FF6D9721563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC8D701-CCF3-4B91-BBCC-1FF6D9721563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC8D701-CCF3-4B91-BBCC-1FF6D9721563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC8D701-CCF3-4B91-BBCC-1FF6D9721563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F0D852F-3FD9-4E25-AE20-05AD92534640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0D852F-3FD9-4E25-AE20-05AD92534640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7404112E-0425-4BF2-86B0-E2A5DB903425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7404112E-0425-4BF2-86B0-E2A5DB903425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BB5CCF-E600-45C9-8403-06AD8DB0BE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BB5CCF-E600-45C9-8403-06AD8DB0BE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +176,12 @@ Global
 		{64A7F046-44D4-44D8-B9AC-DB8DB24093A2} = {9C4DE37D-4A0D-45BC-9CEC-67CBE2B2641A}
 		{391A1105-54E8-4165-8E3E-45ECFF1A7295} = {64A7F046-44D4-44D8-B9AC-DB8DB24093A2}
 		{CB631186-E989-4F48-8FA8-366548124785} = {59308B8B-ED0C-4B80-8C55-C753FBFC38B7}
+		{292AA7B1-CF73-4E6E-A76D-587D12944AA4} = {D2A10972-3D9E-4383-8043-CF5191B46DE2}
+		{AAC8D701-CCF3-4B91-BBCC-1FF6D9721563} = {D2A10972-3D9E-4383-8043-CF5191B46DE2}
+		{2F0D852F-3FD9-4E25-AE20-05AD92534640} = {00EDD4E3-4DB9-4F56-9538-D2108F54966A}
+		{7404112E-0425-4BF2-86B0-E2A5DB903425} = {ACB3E4FB-28F8-4C69-BF21-FD19E66D5ABE}
+		{C6215E2D-249F-4BCB-AB5E-4DB454D29D36} = {A0182FAB-1387-4569-BBD1-C0F1E7453B4B}
+		{C6BB5CCF-E600-45C9-8403-06AD8DB0BE75} = {C6215E2D-249F-4BCB-AB5E-4DB454D29D36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3B8D0F4-D5C5-46BA-AA22-23177E43428E}
