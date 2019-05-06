@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tools.Environment
 {
-    class EnvRqabbitMQStepConvertDiscordTree2PlantUml
+    public class EnvRqabbitMQStepRenderPlantUml
     {
-        public static readonly string QueueName = "Step.Convert.DiscordTree2PlantUml";
+        public static readonly string QueueName = "Step.Render.PlantUML";
         public static readonly string VirtualHost = "/";
     }
 }
