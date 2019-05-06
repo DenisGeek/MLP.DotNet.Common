@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\API\V1\CS\API.V1.RPC.Server.CS\API.V1.RPC.Server.CS.csproj" />
+    <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\Tools.Data.TreeStructure.csproj" />
+    <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools.Environment.RabbitMQ\Tools.Environment.RabbitMQ.csproj" />
+  </ItemGroup>
+
+</Project>
