@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MS.Watcher.DiscordBot": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

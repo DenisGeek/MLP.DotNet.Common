@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MS.Step.Convert.DiscordTree2PlantUml": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
