@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MS.Step.Render.PlantUml": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -23,7 +23,7 @@ namespace MS.Step.Render.PlantUml
         private static string MessageHandler(string aMessage)
         {
             //ifile++;
-            Console.WriteLine($"MS.Step.Render.PlantUml\n => [x] Recieved:  {aMessage}");
+            Console.WriteLine($"MS.Step.Render.PlantUml\n => [x] Recieved:  {aMessage.Length}");
             File.WriteAllText($"{ifile}.MS.Step.Render.PlantUml.In.txt", aMessage);
 
             var res = new RenderPlantUML().Do(aMessage);
