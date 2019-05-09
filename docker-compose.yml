@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ms.watcher.discordbot:
+    image: ${DOCKER_REGISTRY-}mswatcherdiscordbot
+    build:
+      context: .
+      dockerfile: MS/Watcher/MS.Watcher.DiscordBot/Dockerfile
