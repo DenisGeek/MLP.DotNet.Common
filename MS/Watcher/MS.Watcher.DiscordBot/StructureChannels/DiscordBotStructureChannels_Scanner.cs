@@ -3,22 +3,24 @@ using Discord;
 using Discord.Rest;
 using Discord.WebSocket;
 using MLP.Tools;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Tools.Environment;
 
 namespace MS.Watcher.DiscordBot.StructureChannels
 {
-    public class DiscordBotStructureChannels
+    public class DiscordBotStructureChannels_Scanner
     {
         public int ScanInterval = 1000;
         private readonly DiscordSocketClient _client;
         private readonly SocketMessage _userMessage;
         private RestUserMessage _botMessage;
 
-        public DiscordBotStructureChannels(
+        public DiscordBotStructureChannels_Scanner(
             DiscordSocketClient aClient
             , SocketMessage aMessage
             )
@@ -26,26 +28,31 @@ namespace MS.Watcher.DiscordBot.StructureChannels
             _client = aClient;
             _userMessage = aMessage;
         }
-        public IEnumerable<SocketGuildChannel> getAllChannelsIter(DiscordSocketClient client)
+
+        public async Task<string> Scan(int i)
         {
-            foreach (var guild in client.Guilds)
-                foreach (var channel in guild.Channels)
-                    yield return channel;
+            await Task.Delay(100);
+            Console.WriteLine($"Scan {i++}");
+
+            //var tree = new Node<DiscordNode>();
+            //tree.Data = new DiscordNode() { NodePName = "MLP Discord", NodePKind = "root" };
+            //tree.AddChild(new DiscordNode() { NodePName = "cat 1", NodePKind = "category" });
+            //tree.Children[0].AddChild(new DiscordNode() { NodePName = "chan 1", NodePKind = "chanhel" });
+            //tree.AddChild(new DiscordNode() { NodePName = "cat 2", NodePKind = "category" });
+            //tree.AddChild(new DiscordNode() { NodePName = "chan in root", NodePKind = "chanhel" });
+            //var jsonMessage = tree.ToJson();
+
+            var channelsBuilder = new DiscordBotStructureChannels_Builder(_client);
+            var tree = channelsBuilder.BuildTree();
+
+            var jsonMessage = tree.ToJson();
+
+            return jsonMessage;
         }
-        public IEnumerable<SocketGuildChannel> getAllChannelsList(DiscordSocketClient client)
-        {
-            var res = new List<SocketGuildChannel>();
-            foreach (var guild in client.Guilds)
-                foreach (var channel in guild.Channels)
-                    res.Add(channel);
-            return res;
-        }
+
+
         public async Task Start()
         {
-            foreach (var guid in _client.Guilds)
-            {
-
-            }
             _botMessage = await _userMessage.Channel.SendMessageAsync("MLP.net.BotTest started");
 
             var i = 0;
@@ -53,33 +60,17 @@ namespace MS.Watcher.DiscordBot.StructureChannels
             {
                 var structure = Scan(i).GetAwaiter().GetResult();
                 var res = await Task.Run(() => Process(structure));
-                await _botMessage.ModifyAsync(x => x.Content = $"{i}");
+                //await _botMessage.ModifyAsync(x => x.Content = $"{i}");
+
+                var png = JsonConvert.DeserializeObject<byte[]>(res);
+                var stream = new MemoryStream(png);
+                await _userMessage.Channel.SendFileAsync(stream,$"{i}.png");
+
                 Console.WriteLine($"{i++}");
                 await Task.Delay(ScanInterval);
             }
         }
 
-        class DiscordNode
-        {
-            public string NodePName;
-            public string NodePKind;
-            public string NodePDescr;
-        }
-        public async Task<string> Scan(int i)
-        {
-            await Task.Delay(100);
-            Console.WriteLine($"Scan {i++}");
-
-            var tree = new Node<DiscordNode>();
-            tree.Data = new DiscordNode() { NodePName = "MLP Discord", NodePKind = "root" };
-            tree.AddChild(new DiscordNode() { NodePName = "cat 1", NodePKind = "category" });
-            tree.Children[0].AddChild(new DiscordNode() { NodePName = "chan 1", NodePKind = "chanhel" });
-            tree.AddChild(new DiscordNode() { NodePName = "cat 2", NodePKind = "category" });
-            tree.AddChild(new DiscordNode() { NodePName = "chan in root", NodePKind = "chanhel" });
-            var jsonMessage = tree.ToJson();
-
-            return jsonMessage;
-        }
 
         public string Process(string message)
         {
