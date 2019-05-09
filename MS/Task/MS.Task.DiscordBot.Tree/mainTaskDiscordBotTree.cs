@@ -3,6 +3,7 @@
 namespace MS.Task.DiscordBot.Tree
 {
     using API.V1.RPC;
+    using Newtonsoft.Json;
     using System.IO;
     using System.Threading.Tasks;
     using Tools.Environment;
@@ -44,6 +45,8 @@ namespace MS.Task.DiscordBot.Tree
             Console.WriteLine($"MS.Task.DiscordBot.Tree =>_client4RenderPlantUml =>" +
                 $"\n >=< [x] rendered 2 plantUML:  {renderedPlantUML.Length}");
             File.WriteAllText($"{ifile}.MS.Task.DiscordBot.Tree.3.renderedPlantUML.txt", renderedPlantUML);
+            var png = JsonConvert.DeserializeObject<byte[]>(renderedPlantUML);
+            File.WriteAllBytes("MS.Task.DiscordBot.Tree.PlantUml.png", png);
 
             return renderedPlantUML;
         }

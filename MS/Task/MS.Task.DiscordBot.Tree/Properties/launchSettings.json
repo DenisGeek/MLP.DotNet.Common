@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MS.Task.DiscordBot.Tree": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
