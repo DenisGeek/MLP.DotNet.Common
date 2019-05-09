@@ -19,6 +19,7 @@ namespace MS.Task.DiscordBot.Tree
 
         public async Task MainAsync()
         {
+            var h = EnvRabbitMQ.Host;
             InitClient4RenderPlantUml();
             InitClient4ConvertMsg2PlantUml();
             InitServer4IncomingMessages();
@@ -30,7 +31,7 @@ namespace MS.Task.DiscordBot.Tree
 
         private static string MessageHandler(string aMessage)
         {
-            //ifile++;
+            ifile++;
 
             Console.WriteLine($"MS.Task.DiscordBot.Tree" +
                 $"\n -=> [x] Recieved:  {aMessage.Length}");
@@ -46,7 +47,7 @@ namespace MS.Task.DiscordBot.Tree
                 $"\n >=< [x] rendered 2 plantUML:  {renderedPlantUML.Length}");
             File.WriteAllText($"{ifile}.MS.Task.DiscordBot.Tree.3.renderedPlantUML.txt", renderedPlantUML);
             var png = JsonConvert.DeserializeObject<byte[]>(renderedPlantUML);
-            File.WriteAllBytes("MS.Task.DiscordBot.Tree.PlantUml.png", png);
+            File.WriteAllBytes($"{ifile}.MS.Task.DiscordBot.Tree.PlantUml.png", png);
 
             return renderedPlantUML;
         }

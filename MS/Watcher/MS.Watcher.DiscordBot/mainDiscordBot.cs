@@ -66,7 +66,7 @@ namespace MS.Watcher.DiscordBot
                     }
                     break;
                 case "!SCAN":
-                    await Task.Run(() => new DiscordBotStructureChannels(_client, message).Start());
+                    await Task.Run(() => new DiscordBotStructureChannels_Scanner(_client, message).Start());
                     //await new DiscordBotStructureChannels(_client, message).Start();
                     break;
             }

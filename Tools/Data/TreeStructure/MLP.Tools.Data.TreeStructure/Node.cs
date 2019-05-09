@@ -9,10 +9,12 @@ namespace MLP.Tools
         public TData Data;
         public List<Node<TData>> Children = new List<Node<TData>>();
 
-        public void AddChild(TData aData)
-            => Children.Add(new Node<TData>()
-            {
-                Data = aData,
-            });
+        public Node<TData> AddChild(TData aData)
+        {
+            var res = new Node<TData>(){ Data = aData};
+            Children.Add(res);
+            return res;
+        }
+           
     }
 }

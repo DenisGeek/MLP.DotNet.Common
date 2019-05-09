@@ -7,7 +7,7 @@ namespace Tools.Environment
         public static readonly string Token;
         static EnvDiscord()
         {
-            Token = System.Environment.GetEnvironmentVariable("Discord_Token");
+            Token = System.Environment.GetEnvironmentVariable("MLP_DiscordBot_Token");
         }
     }
 }

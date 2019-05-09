@@ -10,10 +10,10 @@ namespace Tools.Environment
         public static readonly int Port;
         static EnvRabbitMQ()
         {
-            User = EnvironmentExt.GetEnvironmentVariable("RabbitMQ_User", "guest");
-            Pass = EnvironmentExt.GetEnvironmentVariable("RabbitMQ_Pass", "guest");
-            Host = EnvironmentExt.GetEnvironmentVariable("RabbitMQ_Host", "localhost");
-            Port = Convert.ToInt32(EnvironmentExt.GetEnvironmentVariable("RabbitMQ_Port", "5672"));
+            User = EnvironmentExt.GetEnvironmentVariable("MLP_RabbitMQ_User", "guest");
+            Pass = EnvironmentExt.GetEnvironmentVariable("MLP_RabbitMQ_Pass", "guest");
+            Host = EnvironmentExt.GetEnvironmentVariable("MLP_RabbitMQ_Host", "localhost");
+            Port = Convert.ToInt32(EnvironmentExt.GetEnvironmentVariable("MLP_RabbitMQ_Port", "5672"));
         }
     }
 }

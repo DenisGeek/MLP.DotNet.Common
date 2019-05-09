@@ -21,7 +21,7 @@ namespace MS.Step.Convert.DiscordTree2PlantUml
         static int ifile = 0;
         private static string MessageHandler(string aMessage)
         {
-            //ifile++;
+            ifile++;
             Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n => [x] Recieved:  {aMessage.Length}");
             File.WriteAllText($"{ifile}.MS.Step.Convert.DiscordTree2PlantUml.In.txt", aMessage);
 

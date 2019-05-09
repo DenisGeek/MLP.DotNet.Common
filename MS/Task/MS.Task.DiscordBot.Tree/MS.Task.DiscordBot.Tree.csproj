@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
+	<DockerfileRunEnvironmentFiles>Dockerfile.MS.Watcher.DiscordBot.env</DockerfileRunEnvironmentFiles>
   </PropertyGroup>
 
   <ItemGroup>
