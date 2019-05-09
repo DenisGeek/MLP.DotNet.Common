@@ -22,12 +22,12 @@ namespace MS.Step.Convert.DiscordTree2PlantUml
         private static string MessageHandler(string aMessage)
         {
             //ifile++;
-            Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n => [x] Recieved:  {aMessage}");
+            Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n => [x] Recieved:  {aMessage.Length}");
             File.WriteAllText($"{ifile}.MS.Step.Convert.DiscordTree2PlantUml.In.txt", aMessage);
 
             var res = new ConvertDiscordTree2PlantUml().Do(aMessage);
 
-            Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n <= [x] Reply with:  {res}");
+            Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n <= [x] Reply with:  {res.Length}");
             File.WriteAllText($"{ifile}.MS.Step.Convert.DiscordTree2PlantUml.Out.txt", res);
 
             return res;
@@ -35,6 +35,14 @@ namespace MS.Step.Convert.DiscordTree2PlantUml
 
         private static void InitServer4IncomingMessages()
         {
+            _server4IncomingMessages = new RpcServer(
+                                    aHostName: EnvRabbitMQ.Host,
+                                    aVirtualHost: EnvRqabbitMQStepConvertDiscordTree2PlantUml.VirtualHost,
+                                    aPort: EnvRabbitMQ.Port,
+                                    aQueueName: EnvRqabbitMQStepConvertDiscordTree2PlantUml.QueueName,
+                                    aUser: EnvRabbitMQ.User,
+                                    aPass: EnvRabbitMQ.Pass
+                                    );
             _server4IncomingMessages = new RpcServer(
                                     aHostName: EnvRabbitMQ.Host,
                                     aVirtualHost: EnvRqabbitMQStepConvertDiscordTree2PlantUml.VirtualHost,

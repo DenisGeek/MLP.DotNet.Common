@@ -1,0 +1,539 @@
+{
+    "Data": {
+        "NodePName": "MLP Discord",
+        "NodePKind": "root",
+        "NodePDescr": null
+    },
+    "Children": [
+        {
+            "Data": {
+                "NodePName": "Hi my friend",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "curator voice chat",
+                        "NodePKind": "VoiceChannel",
+                        "NodePDescr": "Only Curators Can See This"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "curator-chat",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Only Curators Can See This"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "ONLY ADMIN Can See this",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "here-you-are",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Hi my friend"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "read-me-first",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Hi my friend"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "tell-about-your-goal",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Hi my friend"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "General chat",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "log-discord-changes",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "ONLY ADMIN Can See this"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "log-user",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "ONLY ADMIN Can See this"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "passwords",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "ONLY ADMIN Can See this"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "amdin-chat",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "ONLY ADMIN Can See this"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "MLP Core .Net",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "start-info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "suggestions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion-of-suggestions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "book-of-complaints",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "daily-motivation",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "off-topic",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "General chat"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "VK Management",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "classroom",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "tasks-core",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "step-by-step",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "questions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "git-activity",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "git-activity-net",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "MLP Core .Net"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "WEB Site Python",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "VK Management"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "questions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "VK Management"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "VK Management"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "think",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "VK Management"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "git",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "VK Management"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "Discord Bot",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "request-for-participation",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "step-by-step",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "questions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "git-activity",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "tasks-backend",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "WEB Site Python"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "Web Server",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Discord Bot"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "step-by-step",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Discord Bot"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "participation",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Discord Bot"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Discord Bot"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "task",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Discord Bot"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "git-activity",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Discord Bot"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "test them all",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Web Server"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "classroom",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Web Server"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Web Server"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "questions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Web Server"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "requirements",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "Web Server"
+                    },
+                    "Children": []
+                }
+            ]
+        },
+        {
+            "Data": {
+                "NodePName": "Only Curators Can See This",
+                "NodePKind": "Category",
+                "NodePDescr": "None"
+            },
+            "Children": [
+                {
+                    "Data": {
+                        "NodePName": "info",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "discussion",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "git-activity",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "questions",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "github-learning-lab",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "cool-links",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "noisy-tests",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                },
+                {
+                    "Data": {
+                        "NodePName": "automaton",
+                        "NodePKind": "TextChannel",
+                        "NodePDescr": "test them all"
+                    },
+                    "Children": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+@startuml
+salt
+{
+  {T
+    + <color:black>  MLP Discord 
+    ++ <color:blue>  Hi my friend  | None
+    +++ <color:grey>  curator voice chat  | Only Curators Can See This
+    +++ <color:green>  curator-chat  | Only Curators Can See This
+    ++ <color:blue>  General chat  | None
+    +++ <color:green>  log-discord-changes  | ONLY ADMIN Can See this
+    +++ <color:green>  log-user  | ONLY ADMIN Can See this
+    +++ <color:green>  passwords  | ONLY ADMIN Can See this
+    +++ <color:green>  amdin-chat  | ONLY ADMIN Can See this
+    ++ <color:blue>  MLP Core .Net  | None
+    +++ <color:green>  start-info  | General chat
+    +++ <color:green>  discussion  | General chat
+    +++ <color:green>  suggestions  | General chat
+    +++ <color:green>  discussion-of-suggestions  | General chat
+    +++ <color:green>  book-of-complaints  | General chat
+    +++ <color:green>  daily-motivation  | General chat
+    +++ <color:green>  off-topic  | General chat
+    ++ <color:blue>  VK Management  | None
+    +++ <color:green>  info  | MLP Core .Net
+    +++ <color:green>  classroom  | MLP Core .Net
+    +++ <color:green>  tasks-core  | MLP Core .Net
+    +++ <color:green>  step-by-step  | MLP Core .Net
+    +++ <color:green>  questions  | MLP Core .Net
+    +++ <color:green>  discussion  | MLP Core .Net
+    +++ <color:green>  git-activity  | MLP Core .Net
+    +++ <color:green>  git-activity-net  | MLP Core .Net
+    ++ <color:blue>  WEB Site Python  | None
+    +++ <color:green>  info  | VK Management
+    +++ <color:green>  questions  | VK Management
+    +++ <color:green>  discussion  | VK Management
+    +++ <color:green>  think  | VK Management
+    +++ <color:green>  git  | VK Management
+    ++ <color:blue>  Discord Bot  | None
+    +++ <color:green>  info  | WEB Site Python
+    +++ <color:green>  request-for-participation  | WEB Site Python
+    +++ <color:green>  step-by-step  | WEB Site Python
+    +++ <color:green>  questions  | WEB Site Python
+    +++ <color:green>  git-activity  | WEB Site Python
+    +++ <color:green>  discussion  | WEB Site Python
+    +++ <color:green>  tasks-backend  | WEB Site Python
+    ++ <color:blue>  Web Server  | None
+    +++ <color:green>  info  | Discord Bot
+    +++ <color:green>  step-by-step  | Discord Bot
+    +++ <color:green>  participation  | Discord Bot
+    +++ <color:green>  discussion  | Discord Bot
+    +++ <color:green>  task  | Discord Bot
+    +++ <color:green>  git-activity  | Discord Bot
+    ++ <color:blue>  test them all  | None
+    +++ <color:green>  info  | Web Server
+    +++ <color:green>  classroom  | Web Server
+    +++ <color:green>  discussion  | Web Server
+    +++ <color:green>  questions  | Web Server
+    +++ <color:green>  requirements  | Web Server
+  }
+}
+@enduml
