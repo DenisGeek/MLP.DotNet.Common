@@ -3,3 +3,5 @@
 /MS.Step.Render.PlantUml.png
 /Dockerfile.MS.Step.Render.PlantUml.csproj.env
 /Dockerfile.MS.Step.Render.PlantUml.env
+*.txt
+*.png
