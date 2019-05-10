@@ -68,13 +68,10 @@ namespace MS.Watcher.DiscordBot.StructureChannels
                 && ((SocketVoiceChannel)gch).Category == null)
                 .ToList()
                 .ForEach(gch => res.AddChild(gch));
+
             // sort
             res.Children = res.Children.OrderBy(c => c.Data.Position).ToList();
-            //foreach (var category in aChannelsList/*.Where(c => c.GetType() == typeof(SocketCategoryChannel))*/)
-            //{
-            //    Console.WriteLine($"{category.Name} \t\t {category.GetType()} \t\t {category.Guild.Name}");
-            //    addedChannels.Add(category);
-            //}
+
             return res;
         }
 
@@ -117,7 +114,9 @@ namespace MS.Watcher.DiscordBot.StructureChannels
                 return inner_res;
             }
 
+            // add child groups and channels
             var res = Childs(aChannelsTree);
+
             // name 4 Root node
             res.Data = new DiscordNode()
             {
