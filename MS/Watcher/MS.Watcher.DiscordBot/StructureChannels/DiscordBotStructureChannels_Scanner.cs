@@ -50,21 +50,28 @@ namespace MS.Watcher.DiscordBot.StructureChannels
             return jsonMessage;
         }
 
-
+        static string ThisNamespace { get => System.Reflection.Assembly.GetExecutingAssembly().EntryPoint.DeclaringType.Namespace; }
         public async Task Start()
         {
-            _botMessage = await _userMessage.Channel.SendMessageAsync("MLP.net.BotTest started");
+            _botMessage = await _userMessage.Channel.SendMessageAsync($"MLP.net.BotTest started ({ThisNamespace})");
 
             var i = 0;
             while (true)
             {
                 var structure = Scan(i).GetAwaiter().GetResult();
                 var res = await Task.Run(() => Process(structure));
-                //await _botMessage.ModifyAsync(x => x.Content = $"{i}");
 
+
+                //// not working
+                //var png = JsonConvert.DeserializeObject<byte[]>(res);
+                //var stream = new MemoryStream(png);
+                //await _userMessage.Channel.SendFileAsync(stream, $"{i}.png");
+
+                //working
                 var png = JsonConvert.DeserializeObject<byte[]>(res);
-                var stream = new MemoryStream(png);
-                await _userMessage.Channel.SendFileAsync(stream,$"{i}.png");
+                var fileName = $"{ThisNamespace}.PlantUml.png";
+                File.WriteAllBytes(fileName, png);
+                await _userMessage.Channel.SendFileAsync(fileName);
 
                 Console.WriteLine($"{i++}");
                 await Task.Delay(ScanInterval);
@@ -74,6 +81,7 @@ namespace MS.Watcher.DiscordBot.StructureChannels
 
         public string Process(string message)
         {
+            var h = EnvRabbitMQ.Host;
             var response = "";
             using (var aReguest = new RpcClient(
                                         aHostName: EnvRabbitMQ.Host,
