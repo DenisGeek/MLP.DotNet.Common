@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
-	<DockerfileRunEnvironmentFiles>Dockerfile.MS.Watcher.DiscordBot.env</DockerfileRunEnvironmentFiles>
+	<DockerfileRunEnvironmentFiles>Dockerfile.MS.Step.Convert.DiscordTree2PlantUml.env</DockerfileRunEnvironmentFiles>
     <Version>0.0.3</Version>
   </PropertyGroup>
 
