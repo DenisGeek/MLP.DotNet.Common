@@ -18,31 +18,26 @@ namespace MS.Step.Convert.DiscordTree2PlantUml
             // Block this task until the program is closed.
             await Task.Delay(-1);
         }
+
+        static string ThisNamespace { get => System.Reflection.Assembly.GetExecutingAssembly().EntryPoint.DeclaringType.Namespace; }
         static int ifile = 0;
         private static string MessageHandler(string aMessage)
         {
             ifile++;
-            Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n => [x] Recieved:  {aMessage.Length}");
-            File.WriteAllText($"{ifile}.MS.Step.Convert.DiscordTree2PlantUml.In.txt", aMessage);
+            Console.WriteLine($"{ThisNamespace}\n => [x] Recieved:  {aMessage.Length}");
+            File.WriteAllText($"{ifile}.{ThisNamespace}.In.txt", aMessage);
 
             var res = new ConvertDiscordTree2PlantUml().Do(aMessage);
 
-            Console.WriteLine($"MS.Step.Convert.DiscordTree2PlantUml\n <= [x] Reply with:  {res.Length}");
-            File.WriteAllText($"{ifile}.MS.Step.Convert.DiscordTree2PlantUml.Out.txt", res);
+            Console.WriteLine($"{ThisNamespace}\n <= [x] Reply with:  {res.Length}");
+            File.WriteAllText($"{ifile}.{ThisNamespace}.Out.txt", res);
 
             return res;
         }
 
         private static void InitServer4IncomingMessages()
         {
-            _server4IncomingMessages = new RpcServer(
-                                    aHostName: EnvRabbitMQ.Host,
-                                    aVirtualHost: EnvRqabbitMQStepConvertDiscordTree2PlantUml.VirtualHost,
-                                    aPort: EnvRabbitMQ.Port,
-                                    aQueueName: EnvRqabbitMQStepConvertDiscordTree2PlantUml.QueueName,
-                                    aUser: EnvRabbitMQ.User,
-                                    aPass: EnvRabbitMQ.Pass
-                                    );
+            var h = EnvRabbitMQ.Host;
             _server4IncomingMessages = new RpcServer(
                                     aHostName: EnvRabbitMQ.Host,
                                     aVirtualHost: EnvRqabbitMQStepConvertDiscordTree2PlantUml.VirtualHost,
@@ -52,7 +47,7 @@ namespace MS.Step.Convert.DiscordTree2PlantUml
                                     aPass: EnvRabbitMQ.Pass
                                     );
             _server4IncomingMessages.HandlerReceivedJson = MessageHandler;
-            Console.WriteLine("MS.Step.Convert.DiscordTree2PlantUml\n [x] Awaiting RPC requests");
+            Console.WriteLine($"{ThisNamespace}\n [x] Awaiting RPC requests");
         }
     }
 }

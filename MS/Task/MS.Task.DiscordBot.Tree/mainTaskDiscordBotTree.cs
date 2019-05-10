@@ -27,33 +27,33 @@ namespace MS.Task.DiscordBot.Tree
             await Task.Delay(-1);
         }
 
+        static string ThisNamespace { get => System.Reflection.Assembly.GetExecutingAssembly().EntryPoint.DeclaringType.Namespace; }
         static int ifile = 0;
-
         private static string MessageHandler(string aMessage)
         {
             ifile++;
 
-            Console.WriteLine($"MS.Task.DiscordBot.Tree" +
-                $"\n -=> [x] Recieved:  {aMessage.Length}");
+            Console.WriteLine($"{ThisNamespace}\n -=> [x] Recieved:  {aMessage.Length}");
             File.WriteAllText($"{ifile}.MS.Task.DiscordBot.Tree.0.In.txt", aMessage);
 
             var plantUML = _client4ConvertMsg2PlantUml.Call(aMessage);
-            Console.WriteLine($"MS.Task.DiscordBot.Tree =>_client4ConvertMsg2PlantUml =>" +
+            Console.WriteLine($"{ThisNamespace} =>_client4ConvertMsg2PlantUml =>" +
                 $"\n >=< [x]  converted 2 plantUML:  {plantUML.Length}");
-            File.WriteAllText($"{ifile}.MS.Task.DiscordBot.Tree.1.plantUML.txt", plantUML);
+            File.WriteAllText($"{ifile}.{ThisNamespace}.1.plantUML.txt", plantUML);
 
             var renderedPlantUML = _client4RenderPlantUml.Call(plantUML);
-            Console.WriteLine($"MS.Task.DiscordBot.Tree =>_client4RenderPlantUml =>" +
+            Console.WriteLine($"{ThisNamespace} =>_client4RenderPlantUml =>" +
                 $"\n >=< [x] rendered 2 plantUML:  {renderedPlantUML.Length}");
-            File.WriteAllText($"{ifile}.MS.Task.DiscordBot.Tree.3.renderedPlantUML.txt", renderedPlantUML);
+            File.WriteAllText($"{ifile}.{ThisNamespace}.3.renderedPlantUML.txt", renderedPlantUML);
             var png = JsonConvert.DeserializeObject<byte[]>(renderedPlantUML);
-            File.WriteAllBytes($"{ifile}.MS.Task.DiscordBot.Tree.PlantUml.png", png);
+            File.WriteAllBytes($"{ifile}.{ThisNamespace}.PlantUml.png", png);
 
             return renderedPlantUML;
         }
 
         private static void InitServer4IncomingMessages()
         {
+            var h = EnvRabbitMQ.Host;
             _server4IncomingMessages = new RpcServer(
                                     aHostName: EnvRabbitMQ.Host,
                                     aVirtualHost: EnvRabbitMQTaskDiscordTree.VirtualHost,

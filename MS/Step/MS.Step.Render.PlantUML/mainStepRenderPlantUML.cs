@@ -19,26 +19,29 @@ namespace MS.Step.Render.PlantUml
             // Block this task until the program is closed.
             await Task.Delay(-1);
         }
+
+        static string ThisNamespace { get => System.Reflection.Assembly.GetExecutingAssembly().EntryPoint.DeclaringType.Namespace; }
         static int ifile = 0;
         private static string MessageHandler(string aMessage)
         {
             ifile++;
-            Console.WriteLine($"MS.Step.Render.PlantUml\n => [x] Recieved:  {aMessage.Length}");
-            File.WriteAllText($"{ifile}.MS.Step.Render.PlantUml.In.txt", aMessage);
+            Console.WriteLine($"{ThisNamespace}l\n => [x] Recieved:  {aMessage.Length}");
+            File.WriteAllText($"{ifile}.{ThisNamespace}.In.txt", aMessage);
 
             var res = new RenderPlantUML().Do(aMessage);
 
             var png = JsonConvert.DeserializeObject<byte[]>(res);
-            File.WriteAllBytes("MS.Step.Render.PlantUml.png", png);
+            File.WriteAllBytes($"{ThisNamespace}.png", png);
 
-            Console.WriteLine($"MS.Step.Render.PlantUml\n <= [x] Reply with:  {res.Length}");
-            File.WriteAllText($"{ifile}.MS.Step.Render.PlantUml.Out.txt", res);
+            Console.WriteLine($"{ThisNamespace}\n <= [x] Reply with:  {res.Length}");
+            File.WriteAllText($"{ifile}.{ThisNamespace}.Out.txt", res);
 
             return res;
         }
 
         private static void InitServer4IncomingMessages()
         {
+            var h = EnvRabbitMQ.Host;
             _server4IncomingMessages = new RpcServer(
                                     aHostName: EnvRabbitMQ.Host,
                                     aVirtualHost: EnvRqabbitMQStepRenderPlantUml.VirtualHost,
@@ -48,7 +51,7 @@ namespace MS.Step.Render.PlantUml
                                     aPass: EnvRabbitMQ.Pass
                                     );
             _server4IncomingMessages.HandlerReceivedJson = MessageHandler;
-            Console.WriteLine("MS.Step.Render.PlantUml\n [x] Awaiting RPC requests");
+            Console.WriteLine($"{ThisNamespace}\n [x] Awaiting RPC requests");
         }
     }
 }
