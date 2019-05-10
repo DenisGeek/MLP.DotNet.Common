@@ -31,6 +31,7 @@ namespace MS.Watcher.DiscordBot
             _client.MessageReceived += MessageReceived;
             //await new DiscordBotStructureChannels(_client).Start();
 
+            Console.WriteLine($"{ThisNamespace} => Started");
             // Block this task until the program is closed.
             await Task.Delay(-1);
         }
@@ -77,5 +78,7 @@ namespace MS.Watcher.DiscordBot
             Console.WriteLine(msg.ToString());
             return Task.CompletedTask;
         }
+
+        static string ThisNamespace { get => System.Reflection.Assembly.GetExecutingAssembly().EntryPoint.DeclaringType.Namespace; }
     }
 }

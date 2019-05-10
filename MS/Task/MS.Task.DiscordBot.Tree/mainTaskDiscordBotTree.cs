@@ -42,7 +42,7 @@ namespace MS.Task.DiscordBot.Tree
             File.WriteAllText($"{ifile}.{ThisNamespace}.1.plantUML.txt", plantUML);
 
             var renderedPlantUML = _client4RenderPlantUml.Call(plantUML);
-            Console.WriteLine($"{ThisNamespace} =>_client4RenderPlantUml =>" +
+            Console.WriteLine($"{ifile}.{ThisNamespace} =>_client4RenderPlantUml =>" +
                 $"\n >=< [x] rendered 2 plantUML:  {renderedPlantUML.Length}");
             File.WriteAllText($"{ifile}.{ThisNamespace}.3.renderedPlantUML.txt", renderedPlantUML);
             var png = JsonConvert.DeserializeObject<byte[]>(renderedPlantUML);

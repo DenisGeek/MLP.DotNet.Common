@@ -31,7 +31,7 @@ namespace MS.Step.Render.PlantUml
             var res = new RenderPlantUML().Do(aMessage);
 
             var png = JsonConvert.DeserializeObject<byte[]>(res);
-            File.WriteAllBytes($"{ThisNamespace}.png", png);
+            File.WriteAllBytes($"{ifile}.{ThisNamespace}.png", png);
 
             Console.WriteLine($"{ThisNamespace}\n <= [x] Reply with:  {res.Length}");
             File.WriteAllText($"{ifile}.{ThisNamespace}.Out.txt", res);
