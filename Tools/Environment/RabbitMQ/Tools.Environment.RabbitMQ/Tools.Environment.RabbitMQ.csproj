@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\API\V1\CS\API.V1.RPC.Client.CS\API.V1.RPC.Client.CS.csproj" />
     <ProjectReference Include="..\..\Tools.EnvironmentExt\Tools.EnvironmentExt.csproj" />
   </ItemGroup>
 
