@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.5.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\API\V1\CS\API_V1_RPC_Server_CS\API_V1_RPC_Server_CS.csproj" />
     <ProjectReference Include="..\..\..\Tools\Data\TreeStructure\MLP.Tools.Data.TreeStructure\Tools.Data.TreeStructure.csproj" />
     <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools.Environment.RabbitMQ\Tools.Environment.RabbitMQ.csproj" />

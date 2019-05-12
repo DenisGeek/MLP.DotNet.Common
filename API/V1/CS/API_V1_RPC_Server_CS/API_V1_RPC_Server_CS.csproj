@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>API.V1.RPC</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API.V1.RPC.Client.CS\API.V1.RPC.Client.CS.csproj" />
+    <PackageReference Include="RabbitMQ.Client" Version="5.1.0" />
   </ItemGroup>
 
 </Project>
