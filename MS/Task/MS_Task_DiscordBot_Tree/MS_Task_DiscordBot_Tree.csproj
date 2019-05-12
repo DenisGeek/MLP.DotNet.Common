@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
 	<DockerfileRunEnvironmentFiles>Dockerfile.MS.Task.DiscordBot.Tree.env</DockerfileRunEnvironmentFiles>
   </PropertyGroup>
@@ -15,7 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\API\V1\CS\API_V1_RPC_Client_CS\API_V1_RPC_Client_CS.csproj" />
     <ProjectReference Include="..\..\..\API\V1\CS\API_V1_RPC_Server_CS\API_V1_RPC_Server_CS.csproj" />
-    <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools.Environment.RabbitMQ\Tools.Environment.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools_Environment_RabbitMQ\Tools_Environment_RabbitMQ.csproj" />
   </ItemGroup>
 
   <ItemGroup>

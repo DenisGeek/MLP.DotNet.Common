@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Tools.EnvironmentExt\Tools.EnvironmentExt.csproj" />
+    <ProjectReference Include="..\..\Tools_EnvironmentExt\Tools_EnvironmentExt.csproj" />
   </ItemGroup>
 
 </Project>

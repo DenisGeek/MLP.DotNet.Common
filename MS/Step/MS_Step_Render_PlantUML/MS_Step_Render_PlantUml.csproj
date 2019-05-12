@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\API\V1\CS\API_V1_RPC_Server_CS\API_V1_RPC_Server_CS.csproj" />
-    <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools.Environment.RabbitMQ\Tools.Environment.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\..\Tools\Environment\RabbitMQ\Tools_Environment_RabbitMQ\Tools_Environment_RabbitMQ.csproj" />
   </ItemGroup>
 
 </Project>
